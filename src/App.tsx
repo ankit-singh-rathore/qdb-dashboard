@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router";
 import Dashboard from "./Components/Dashboard";
 import BlogPost from "./Components/BlogPost";
+import EditPost from "./Components/BlogPost/EditPost";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element= {<Dashboard />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/post/:id" element={<BlogPost />} />
+            <Route path="/editPost" element={<EditPost />} />
           </Routes>
         </div>
       </div>

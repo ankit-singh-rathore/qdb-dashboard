@@ -12,7 +12,7 @@ interface Posts {
 const Blogs = () => {
   const [posts, setPosts] = useState<Posts[]>([]);
 
-  let BLOG_API = "https://jsonplaceholder.typicode.com/users/1/posts";
+  let BLOG_API = "https://jsonplaceholder.typicode.com/posts";
   const fetchBlogPosts = async (url: string) => {
     try {
       const res = await fetch(url);
@@ -38,12 +38,12 @@ const Blogs = () => {
             return (
               <div className="row blogs-list" key={item.id}> 
                 <div className="col-3">
-                  <img src={postImg} />
+                  <img src={postImg} alt="BlogImg"/>
                 </div>
                 <div className="col-9">
                   <div className="blog-title">{item.title} </div>
                   <div className="blog-desc">{item.body} </div>
-                  <div className="read-more"> <Link to={'/post/'+item.id}>Read More </Link></div>
+                  <div className="read-more"> <Link to={`/post/${item.id}`}>Read More </Link></div>
                 </div>
               </div>
             )

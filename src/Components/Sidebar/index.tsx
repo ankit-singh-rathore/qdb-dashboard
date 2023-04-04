@@ -1,13 +1,14 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 var profile = require("../../img/logo/profile.png");
 
 const Sidebar:React.FC = () => {
   
   const [user, setUser] = useState([]);
   
-  let API = "https://jsonplaceholder.typicode.com/users/2";
+  let API = `${process.env.REACT_APP_BASE_API_URI}/users/2`;
   const fetchUserData = async (url: string) => {
     try {
       const res = await fetch(url);
