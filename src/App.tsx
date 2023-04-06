@@ -18,7 +18,6 @@ function App() {
         <Sidebar />
         
         <div className="main-wrapper">
-        <Header />
           <Routes>
             <Route path="/" element= {<Dashboard />} />
             <Route path="/blogs" element={<Blogs />} />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const EditPost = (props: any) => {
 
@@ -15,6 +16,11 @@ const EditPost = (props: any) => {
     })
   }
 
+  const navigate = useNavigate();
+  const redirectToBlogs = () => {
+    navigate('/blogs');
+  }
+
   const updatePost = () => {
     fetch(`${process.env.REACT_APP_BASE_API_URI}/posts/${postContent.id}`, {
       method: "PUT",
@@ -29,6 +35,7 @@ const EditPost = (props: any) => {
     })
       .then((response) => response.json())
       .then((json) => console.log("API",json));
+      redirectToBlogs();
   }
 
 console.log("aaa", postContent);

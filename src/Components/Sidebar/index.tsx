@@ -42,7 +42,7 @@ const Sidebar:React.FC = () => {
           </div>
           <div className="sidebar-footer">
             <span className="sidebar-user-img">
-              <img src={profile} />
+              <img src={profile} alt='profile-img'/>
             </span>
             <div className="sidebar-user-info">
               <span className="sidebar-user__subtitle">Hello</span>

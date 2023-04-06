@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import EditPost from "./EditPost";
 
 interface Post {
@@ -26,10 +26,16 @@ const BlogPost = () => {
     }
   };
 
+  const navigate = useNavigate();
+  const redirectToBlogs = () => {
+    navigate('/blogs');
+  }
+
   const deletePost = (id: any) => {
     fetch(`${process.env.REACT_APP_BASE_API_URI}/posts/${id}`, {
       method: "DELETE",
     });
+    redirectToBlogs();
   };
 
   function editPost(id:any){
