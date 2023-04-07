@@ -37,9 +37,7 @@ const EditPost = (props: any) => {
       .then((json) => console.log("API",json));
       redirectToBlogs();
   }
-
-console.log("aaa", postContent);
-
+  
   return (
     <>
       <div className="blog-main">
